@@ -11,10 +11,10 @@ use async_stream::stream;
 
 Sse(stream! {
     // Merges HTML fragments into the DOM.
-    yield MergeFragments::new("<div id='question'>What do you put in a toaster?</div>").into();
+    yield MergeFragments::new("<div id='question'>What do you put in a toaster?</div>").into_event();
 
     // Merges signals into the signals.
-    yield MergeSignals::new("{response: '', answer: 'bread'}").into();
+    yield MergeSignals::new("{response: '', answer: 'bread'}").into_event();
 })
 ```
 
